@@ -56,9 +56,9 @@ module.exports = {
         // console.log(queryString);
 
         axios.get(`https://api.fda.gov/device/classification.json?search=medical_specialty_description:${queryString}&limit=${devicesLimit}`)
-        .then(results => { 
-            devicesArray.push(results.data.results);
-            // console.log(results.data.results);
+        .then(queryOutput => { 
+            devicesArray.push(queryOutput.data.results);
+            // console.log(queryOutput.data.results);
 
             res.status(200).send(devicesArray);
         })

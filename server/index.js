@@ -1,6 +1,6 @@
 const express = require('express');
-// TO-DO: Add controllers dependencies
 const deviceCtrl = require('./controllers/deviceCtrl');
+const savedCtrl = require('./controllers/savedCtrl');
 const app = express();
 
 app.use(express.json());
@@ -8,7 +8,10 @@ app.use(express.json());
 // openFDA devices endpoint
 app.get('/api/fda-devices', deviceCtrl.getDevices);
 
-// TOD-DO: Add saved devices controllers endpoints
+// Saved devices endpoints
+app.get('/api/saved-devices', savedCtrl.getSavedDevices);
+app.post('/api/saved-devices', savedCtrl.saveDevice);
+app.delete('/api/saved-devices/:id', savedCtrl.deleteDevice);
 
 const portNumber = 5050;
 app.listen(portNumber, () => console.log(`Server is running on port ${portNumber}`));

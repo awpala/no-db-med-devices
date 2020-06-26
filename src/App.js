@@ -1,16 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from './Components/Header';
+import DeviceSearch from './Components/DeviceSearch';
 import Footer from './Components/Footer';
 import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Footer />
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      savedDevices: []
+    };
+
+    // this.saveDevice = this.saveDevice.bind(this);
+  }
+
+  componentDidMount() {
+    axios.get('/api/saved-devices')
+    .then(res => {
+      this.setState({savedDevices: res.data.results})
+    })
+    .catch(err => console.log(err));
+  }
+
+  // saveDevice(device) {
+  //   axios.post('api/saved-devices', { device })
+  //   .then(res => {
+  //     this.setState({savedDevices: res.data.results})
+  //   })
+  //   .catch(err => console.log(err));
+  // }
+
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <DeviceSearch
+          className="QueriedDevices"
+          // queryFn={this.queryDevice}
+        />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
