@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class DeviceRecord extends Component {   
+    constructor(props) {
+        super(props);
+    }
+    
     handleQuery = () => {
         // const { device } = this.props;
         // let newDevice = {
@@ -31,7 +35,7 @@ class DeviceRecord extends Component {
                     : " (No definition indicated)"}
                 </p>
                 <p>Medical Specialty: {device.medical_specialty_description}</p>
-                <p>Device Class: {device.device_class}</p>
+                <p>Device Class: {device.device_class.toUpperCase()}</p>
                 <p>FDA Product Code: {device.product_code}</p>
                 <p>
                 Regulation:

@@ -39,6 +39,19 @@ class DeviceSearch extends Component {
 
         return (
             <div className="queried-devices">
+                <h2>{'Search Device by Medical Specialty and/or by Name'}</h2>
+                <div>
+                    <input
+                        value={'Enter Medical Specialty'}
+                    />
+                    <input
+                        value={'Enter Device Name'}
+                    />
+                    <button>
+                        Search
+                    </button>
+                </div>
+                <h2>{`Click record(s) to save to list`}</h2>
                 {mappedQueriedDevices}
             </div>   
         )
