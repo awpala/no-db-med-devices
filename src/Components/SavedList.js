@@ -12,10 +12,11 @@ const SavedList = props => {
 
     return (
         <div>
-            <h2>{`Saved Device(s)`}</h2>
-            <div>
-                {mappedList}                
-            </div>
+            <h2>{`Your saved device(s)`}</h2>
+            <button onClick={() => props.deleteFn()}>Clear List</button>
+            {mappedList
+                ?<div>{mappedList}</div>
+                : null}    
         </div>
     )
 }

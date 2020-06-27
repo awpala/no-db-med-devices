@@ -19,10 +19,12 @@ module.exports = {
             "Gastroenterology", // Original: "Gastroenterology, Urology"
             "Urology", // Original: "Gastroenterology, Urology"
             "General", // Original: "General, Plastic Surgery"
+            "Plastic", // Original: "General, Plastic Surgery"            
             "Surgery", // Original: "General, Plastic Surgery"
             "Hospital", // Original: "General Hospital"
             "Hematology",
             "Immunology",
+            "Medical", // Original: "Medical Genetics"
             "Genetics", // Original: "Medical Genetics"
             "Microbiology",
             "Neurology",
@@ -46,7 +48,7 @@ module.exports = {
             randomDevices[i] = `${deviceSpecialities[randomIndex]}+`;
         }
 
-        // remove last element's +
+        // remove last element's terminal "+" artifact post-for loop
         randomDevices[randomDevices.length - 1] = randomDevices[randomDevices.length - 1]
         .substring(0, randomDevices[randomDevices.length - 1].length-1);
 

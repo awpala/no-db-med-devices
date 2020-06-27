@@ -24,10 +24,8 @@ module.exports = {
         res.status(200).send(savedDevices);
     },
     deleteDevices: (req, res) => {
-        const { id } = req.params;
-
-        const index = savedDevices.findIndex(el => el.id === + id);
-        savedDevices.splice(index, 1);
+        savedDevices.length = 0; // clear array
+        id = 1;
 
         res.status(200).send(savedDevices);
     }

@@ -12,7 +12,7 @@ app.get('/api/fda-devices', deviceCtrl.getDevices);
 app.get('/api/saved-devices', savedCtrl.getSavedDevices);
 app.post('/api/saved-devices', savedCtrl.saveDevice);
 app.put('/api/saved-devices/:id', savedCtrl.editNote);
-app.delete('/api/saved-devices/:id', savedCtrl.deleteDevices);
+app.delete('/api/saved-devices', savedCtrl.deleteDevices);
 
 const portNumber = 5050;
 app.listen(portNumber, () => console.log(`Server is running on port ${portNumber}`));

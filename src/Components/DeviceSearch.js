@@ -37,7 +37,7 @@ class DeviceSearch extends Component {
 
         return (
             <div className="search-module">
-                <h2>{'Search Device by Medical Specialty and/or by Name'}</h2>
+                <h2>{'Search device by medical specialty and/or by name'}</h2>
                 <div>
                     <input
                         type={"text"}
@@ -51,7 +51,7 @@ class DeviceSearch extends Component {
                         Search
                     </button>
                 </div>
-                <h2>{`Click record(s) to save to list`}</h2>
+                <h2>{`Click device record(s) to save to list`}</h2>
                 <div className="queried-devices">
                     {mappedQueriedDevices}
                 </div>

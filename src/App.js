@@ -43,6 +43,14 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
+  deleteDevices = () => {
+    axios.delete(`/api/saved-devices`)
+    .then(res => {
+      this.setState({savedDevices: res.data})
+    })
+    .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <div className="App">
@@ -54,6 +62,7 @@ class App extends Component {
         <SavedList
           savedDevices={this.state.savedDevices}
           editFn={this.editNote}
+          deleteFn={this.deleteDevices}
         />
         <Footer />
       </div>
