@@ -38,7 +38,7 @@ class DeviceSearch extends Component {
         console.log(this.state.queriedDevices);
 
         return (
-            <div className="device-flex">
+            <div className="queried-devices">
                 {mappedQueriedDevices}
             </div>   
         )

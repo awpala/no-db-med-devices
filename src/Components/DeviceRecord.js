@@ -1,23 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-// const DeviceRecord = props => {
-//     handleQuery = () => {
-//         const { device } = props.device;
-//         let newDevice = {
-//             name: device.device_name
-//         }
-
-//         props.refreshFn();
-//     }
-    
-//     return (
-//         <div onClick={handleQuery}>
-//             <p>Name: {props.device.name}</p>
-//         </div>
-//     )
-// }
-
-class DeviceRecord extends React.Component {   
+class DeviceRecord extends Component {   
     handleQuery = () => {
         // const { device } = this.props;
         // let newDevice = {
@@ -40,12 +23,29 @@ class DeviceRecord extends React.Component {
 
         return (
             <div onClick={this.handleQuery}>
-                <p>Name: {device.device_name}</p>
-                <p>device goes here</p>
+                <p>Device Name: {device.device_name}</p>
+                <p>
+                Definition: 
+                    {device.definition.length > 1
+                    ? " " + device.definition
+                    : " (No definition indicated)"}
+                </p>
+                <p>Medical Specialty: {device.medical_specialty_description}</p>
+                <p>Device Class: {device.device_class}</p>
+                <p>FDA Product Code: {device.product_code}</p>
+                <p>
+                Regulation:
+                    {device.regulation_number.length > 1
+                    ? " 21 CFR " + device.regulation_number
+                    : " (No regulation number indicated)"}
+                </p>
+                <p>Life Sustaining/Supporting? {device.life_sustain_support_flag}</p>
+                <p>Implantable? {device.implant_flag}</p>
+                <p>GMP Exempt? {device.gmp_exempt_flag}</p>
+                <br/>
             </div>
         )
     }
-
 }
 
 export default DeviceRecord;
