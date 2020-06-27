@@ -13,7 +13,6 @@ class DeviceSearch extends Component {
 
     componentDidMount() {
         this.getQueriedDevices();
-        console.log(this.state.queriedDevices);
     }
 
     getQueriedDevices = () => {
@@ -31,28 +30,31 @@ class DeviceSearch extends Component {
             <DeviceRecord
                 key={index}
                 device={device}
+                saveFn={this.props.saveFn}
                 // refreshFn={this.getQueriedDevices}
             />
         ));
-        // }
-        console.log(this.state.queriedDevices);
 
         return (
-            <div className="queried-devices">
+            <div className="search-module">
                 <h2>{'Search Device by Medical Specialty and/or by Name'}</h2>
                 <div>
                     <input
-                        value={'Enter Medical Specialty'}
+                        type={"text"}
+                        placeholder={'Enter Medical Specialty'}
                     />
                     <input
-                        value={'Enter Device Name'}
+                        type={"text"}
+                        placeholder={'Enter Device Name'}
                     />
                     <button>
                         Search
                     </button>
                 </div>
                 <h2>{`Click record(s) to save to list`}</h2>
-                {mappedQueriedDevices}
+                <div className="queried-devices">
+                    {mappedQueriedDevices}
+                </div>
             </div>   
         )
     }

@@ -6,18 +6,18 @@ module.exports = {
         res.status(200).send(savedDevices);
     },
     saveDevice: (req, res) => {
-        const { devices } = req.body.results;
+        const { device } = req.body;
 
-        devices.id = id;
-        id++
+        device.id = id;
+        id++;
 
-        savedDevices.push(devices);
+        savedDevices.push(device);
         res.status(200).send(savedDevices);
     },
     editNote: (req, res) => {
 
     },
-    deleteDevice: (req, res) => {
+    deleteDevices: (req, res) => {
         const { id } = req.params;
 
         const index = savedDevices.findIndex(el => el.id === + id);

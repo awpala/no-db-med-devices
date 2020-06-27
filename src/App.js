@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Components/Header';
 import DeviceSearch from './Components/DeviceSearch';
+import SavedList from './Components/SavedList';
 import Footer from './Components/Footer';
 import axios from 'axios';
 import './App.css';
@@ -13,24 +14,24 @@ class App extends Component {
       savedDevices: []
     };
 
-    // this.saveDevice = this.saveDevice.bind(this);
+    this.saveDevice = this.saveDevice.bind(this);
   }
 
   componentDidMount() {
     axios.get('/api/saved-devices')
     .then(res => {
-      this.setState({savedDevices: res.data.results})
+      this.setState({savedDevices: res.data})
     })
     .catch(err => console.log(err));
   }
 
-  // saveDevice(device) {
-  //   axios.post('api/saved-devices', { device })
-  //   .then(res => {
-  //     this.setState({savedDevices: res.data.results})
-  //   })
-  //   .catch(err => console.log(err));
-  // }
+  saveDevice(device) {
+    axios.post('api/saved-devices', { device })
+    .then(res => {
+      this.setState({savedDevices: res.data})
+    })
+    .catch(err => console.log(err));
+  }
 
 
   render() {
@@ -39,7 +40,10 @@ class App extends Component {
         <Header />
         <DeviceSearch
           className="QueriedDevices"
-          // queryFn={this.queryDevice}
+          saveFn={this.saveDevice}
+        />
+        <SavedList
+          savedDevices={this.state.savedDevices}
         />
         <Footer />
       </div>

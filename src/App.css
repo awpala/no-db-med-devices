@@ -4,10 +4,20 @@
   width: 80vw;
 }
 
+.search-module {
+  position: center;
+}
 
-.QueriedDevices {
+/* .queried-devices {
   height: 500px;
   width: 100vw;
+  position: center;
+} */
+
+.queried-device {
+  position: center;
+  border-style: solid;
+  width: 25%;
 }
 
 .device-flex {
@@ -15,6 +25,10 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+/* .device-description {
+  width: 50%;
+} */
 
 
 
