@@ -19,10 +19,10 @@ class SavedDevice extends Component {
         this.setState({isEditing: !this.state.isEditing});
     }
 
-    // handleEdit = (id) => {
-    //     this.props.nameFn(id, this.state.nameInput);
-    //     this.handleToggle();
-    // }
+    handleEdit = (id) => {
+        this.props.editFn(id, this.state.noteInput);
+        this.handleToggle();
+    }
 
     render(){
         const { device } = this.props;
@@ -36,7 +36,7 @@ class SavedDevice extends Component {
                         ? " " + device.definition
                         : " (No definition indicated)"}
                 </p>
-                <p className="device-description">Medical Specialty: {device.medical_specialty_description}</p>
+                <p className="device-description">Medical Specialty: {device.specialty}</p>
                 <p>Device Class: {device.deviceClass.toUpperCase()}</p>
                 <p>FDA Product Code: {device.productCode}</p>
                 <p>
@@ -48,19 +48,25 @@ class SavedDevice extends Component {
                 <p>Life Sustaining/Supporting? {device.isLifeSustaining}</p>
                 <p>Implantable? {device.isImplantable}</p>
                 <p>GMP Exempt? {device.isGmpExempt}</p>
-                {/* {this.state.isEditing 
+                {this.state.isEditing 
                 ? (
                     <div>
                         <input
                             value={this.state.noteInput}
                             onChange={e => this.handleInput(e.target.value)}
                         />
-                        <button onClick={() => this.handleEdit(this.props.pokemon.id)}>Submit</button>
+                        <button onClick={() => this.handleEdit(this.props.device.id)}>Add Note</button>
                     </div>
                 )
                 : (
                     <div>
-                        <p>{this.props.device.device_name}</p>
+                        <p>
+                            {`User Notes: ${
+                                this.props.device.noteInput
+                                ? this.props.device.noteInput
+                                : `(No user notes indicated)`
+                                }`}
+                        </p>
                         <button onClick={this.handleToggle}>Edit Note</button>
                     </div>
                 )}

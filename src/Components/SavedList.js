@@ -6,6 +6,7 @@ const SavedList = props => {
         <SavedDevice
             key={index}
             device={device}
+            editFn={props.editFn}
         />
     ))
 

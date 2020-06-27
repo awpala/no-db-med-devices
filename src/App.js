@@ -33,6 +33,15 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
+  editNote = (id, newNote) => {
+    let body = {note: newNote};
+
+    axios.put(`/api/saved-devices/${id}`, body)
+    .then(res => {
+      this.setState({savedDevices: res.data})
+    })
+    .catch(err => console.log(err));
+  }
 
   render() {
     return (
@@ -44,6 +53,7 @@ class App extends Component {
         />
         <SavedList
           savedDevices={this.state.savedDevices}
+          editFn={this.editNote}
         />
         <Footer />
       </div>
