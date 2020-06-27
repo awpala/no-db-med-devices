@@ -13,25 +13,29 @@ class DeviceSearch extends Component {
 
     componentDidMount() {
         this.getQueriedDevices();
-        // console.log(this.state.queriedDevices);
+        console.log(this.state.queriedDevices);
     }
 
     getQueriedDevices = () => {
         axios.get('/api/fda-devices')
         .then(res => {
-            this.setState({queriedDevices: res.data.results});
+            this.setState({queriedDevices: res.data})
         })
         .catch(err => console.log(err));
     }
 
     render() {
-        const mappedQueriedDevices = this.state.queriedDevices.map((device, index) => (
+        console.log(this.state.queriedDevices);
+        const mappedQueriedDevices = this.state.queriedDevices.map(
+            (device, index) => (
             <DeviceRecord
                 key={index}
                 device={device}
-                refreshFn={this.getQueriedDevices}
+                // refreshFn={this.getQueriedDevices}
             />
         ));
+        // }
+        console.log(this.state.queriedDevices);
 
         return (
             <div className="device-flex">

@@ -53,12 +53,16 @@ module.exports = {
         // create a query string of 9 random specialities
         const queryString = randomDevices.reduce((acc, device) => acc + device, "");
 
-        // console.log(queryString);
+        console.log(queryString);
+        console.log();
 
         axios.get(`https://api.fda.gov/device/classification.json?search=medical_specialty_description:${queryString}&limit=${devicesLimit}`)
         .then(queryOutput => { 
-            devicesArray.push(queryOutput.data.results);
-            // console.log(queryOutput.data.results);
+            let resultsArray = queryOutput.data.results;
+
+            for(device of resultsArray) {
+                devicesArray.push(device);
+            }
 
             res.status(200).send(devicesArray);
         })

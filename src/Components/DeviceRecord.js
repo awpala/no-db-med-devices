@@ -19,20 +19,29 @@ import React from 'react';
 
 class DeviceRecord extends React.Component {   
     handleQuery = () => {
-        const { device } = this.props;
-        let newDevice = {
-            name: device.device_name
-        }
+        // const { device } = this.props;
+        // let newDevice = {
+        //     name: device.device_name
+        // }
 
         this.props.refreshFn();
     }
 
     render() {
+        // const { device } = this.props;
+
+        // return (
+        //     <div onClick={this.handleQuery}>
+        //         <p>Name: {device.name}</p>
+        //     </div>
+        // )
+
         const { device } = this.props;
 
         return (
             <div onClick={this.handleQuery}>
                 <p>Name: {device.device_name}</p>
+                <p>device goes here</p>
             </div>
         )
     }
