@@ -39,6 +39,13 @@ class DeviceSearch extends Component {
         .catch(err => console.log(err));
     }
 
+    clearSearch = () => {
+        this.setState({
+            specialtyQuery: "",
+            nameQuery: ""
+        })
+    }
+
     handleSpecialtyInput = (val) => {
         this.setState({specialtyQuery: val});
         // this.getQueriedDevices();
@@ -77,6 +84,9 @@ class DeviceSearch extends Component {
                     />
                     <button onClick={this.getQueriedDevices}>
                         Search
+                    </button>
+                    <button onClick={this.clearSearch}>
+                        Clear Search
                     </button>
                 </div>
                 <h2>{`Click device record(s) to save to list`}</h2>
