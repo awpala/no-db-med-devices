@@ -17,21 +17,9 @@ class DeviceSearch extends Component {
         this.getQueriedDevices();
     }
 
-    // Original -- read-only/no search
-    // getQueriedDevices = () => {
-    //     axios.get('/api/fda-devices')
-    //     .then(res => {
-    //         this.setState({queriedDevices: res.data})
-    //     })
-    //     .catch(err => console.log(err));
-    // }
-
     getQueriedDevices = () => {
         const { specialtyQuery, nameQuery } = this.state;
 
-        // axios.get(`/api/fda-devices`, body)
-        // axios.get('/api/fda-devices', { params })
-        // axios.get('/api/fda-devices', params )
         axios.get(`/api/fda-devices/?specialtyQuery=${specialtyQuery}&nameQuery=${nameQuery}`)
         .then(res => {
             this.setState({queriedDevices: res.data});
@@ -48,12 +36,10 @@ class DeviceSearch extends Component {
 
     handleSpecialtyInput = (val) => {
         this.setState({specialtyQuery: val});
-        // this.getQueriedDevices();
     }
 
     handleNameInput = (val) => {
         this.setState({nameQuery: val});
-        // this.getQueriedDevices();
     }
 
     render() {

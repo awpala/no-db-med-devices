@@ -4,7 +4,6 @@ class SavedDevice extends Component {
     constructor(props) {
         super(props);
 
-        // allows for conditional rendering
         this.state = {
             isEditing: false,
             noteInput: ''

@@ -25,10 +25,6 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
-  // searchDevices() {
-    
-  // }
-
   saveDevice(device) {
     axios.post('api/saved-devices', { device })
     .then(res => {
@@ -61,7 +57,6 @@ class App extends Component {
         <Header />
         <DeviceSearch
           className="QueriedDevices"
-          // searchFn={this.searchDevices}
           saveFn={this.saveDevice}
         />
         <SavedList
