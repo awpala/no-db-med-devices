@@ -70,7 +70,6 @@ class SavedDevice extends Component {
                         <button onClick={this.handleToggle}>Edit Note</button>
                     </div>
                 )}
-                {/* <button onClick={() => this.props.deleteFn(this.props.device.id)}>Delete</button> */}
             </div>
         )
     }

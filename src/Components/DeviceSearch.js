@@ -7,7 +7,9 @@ class DeviceSearch extends Component {
         super(props);
 
         this.state = {
-            queriedDevices: []
+            queriedDevices: [],
+            specialtyQuery: "",
+            nameQuery: ""
         }
     }
 
@@ -15,23 +17,42 @@ class DeviceSearch extends Component {
         this.getQueriedDevices();
     }
 
+    // Original -- read-only/no search
+    // getQueriedDevices = () => {
+    //     axios.get('/api/fda-devices')
+    //     .then(res => {
+    //         this.setState({queriedDevices: res.data})
+    //     })
+    //     .catch(err => console.log(err));
+    // }
+
     getQueriedDevices = () => {
-        axios.get('/api/fda-devices')
+        let body = {
+            specialtyQuery: this.state.specialtyQuery,
+            nameQuery: this.state.nameQuery
+        }
+
+        axios.get(`/api/fda-devices/`, body)
         .then(res => {
             this.setState({queriedDevices: res.data})
         })
         .catch(err => console.log(err));
     }
 
+    // searchDevices = () => {
+    //     axios.get('/api/fda-devices/:id', { this.state.specialtyQuery, this.state.nameQuery })
+    //     .then(res => {
+    //         this.setState({queriedDevices: res.data})
+    //     })
+    // }
+
     render() {
-        console.log(this.state.queriedDevices);
         const mappedQueriedDevices = this.state.queriedDevices.map(
             (device, index) => (
             <DeviceRecord
                 key={index}
                 device={device}
                 saveFn={this.props.saveFn}
-                // refreshFn={this.getQueriedDevices}
             />
         ));
 

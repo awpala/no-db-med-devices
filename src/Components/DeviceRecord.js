@@ -16,7 +16,6 @@ class DeviceRecord extends Component {
         }
 
         this.props.saveFn(newDevice);
-        // this.props.refreshFn();
     }
 
     render() {
