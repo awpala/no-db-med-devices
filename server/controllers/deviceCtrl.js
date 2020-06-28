@@ -35,12 +35,13 @@ const deviceSpecialities = [
     "Unknown"
 ]
 
-const devicesArray = [];
 const devicesLimit = 9;
 
 module.exports = {
     getDevices: (req, res) => {
         let { specialtyQuery, nameQuery } = req.body;
+
+        const devicesArray = [];
         
         console.log(specialtyQuery, nameQuery);
 

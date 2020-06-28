@@ -52,6 +52,8 @@ class SavedDevice extends Component {
                 ? (
                     <div>
                         <input
+                            type={"text"}
+                            placeholder={'Enter Notes Here'}
                             value={this.state.noteInput}
                             onChange={e => this.handleInput(e.target.value)}
                         />
