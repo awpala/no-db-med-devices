@@ -27,14 +27,14 @@ class DeviceSearch extends Component {
     // }
 
     getQueriedDevices = () => {
-        let body = {
-            specialtyQuery: this.state.specialtyQuery,
-            nameQuery: this.state.nameQuery
-        }
+        const { specialtyQuery, nameQuery } = this.state;
 
-        axios.get(`/api/fda-devices`, body)
+        // axios.get(`/api/fda-devices`, body)
+        // axios.get('/api/fda-devices', { params })
+        // axios.get('/api/fda-devices', params )
+        axios.get(`/api/fda-devices/?specialtyQuery=${specialtyQuery}&nameQuery=${nameQuery}`)
         .then(res => {
-            this.setState({queriedDevices: res.data})
+            this.setState({queriedDevices: res.data});
         })
         .catch(err => console.log(err));
     }

@@ -39,10 +39,21 @@ const devicesLimit = 9;
 
 module.exports = {
     getDevices: (req, res) => {
-        let { specialtyQuery, nameQuery } = req.body;
+        let { specialtyQuery, nameQuery } = req.query;
+
+        if( specialtyQuery === "undefined" ) {
+            specialtyQuery = undefined;
+        }
+        if( nameQuery === "undefined" ) {
+            nameQuery = undefined;
+        }
 
         const devicesArray = [];
         
+        // console.log(req);
+        // console.log(req.query);
+        // console.log(req.body);
+        // console.log(req.params)
         console.log(specialtyQuery, nameQuery);
 
     // Generate random query string if no search terms provided
@@ -79,7 +90,7 @@ module.exports = {
             
         // Otherwise, search by specialty and by name
         else if (specialtyQuery && nameQuery) {
-            // parse query strings to replace spaces with "+"
+            // parse query strings to replace spaces with "+" using regex
             // (reference: https://stackoverflow.com/questions/3794919/replace-all-spaces-in-a-string-with)
             specialtyQuery = specialtyQuery.replace(/\s/g, '+').toUpperCase();
             nameQuery = nameQuery.replace(/\s/g, '+').toUpperCase();
