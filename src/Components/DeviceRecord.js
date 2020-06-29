@@ -22,7 +22,7 @@ class DeviceRecord extends Component {
         const { device } = this.props;
 
         return (
-            <div className='queried-device' onClick={this.handleQuery}>
+            <div className='device-record' onClick={this.handleQuery}>
                 <p>Device Name: {device.device_name}</p>
                 <p>
                     Definition: 

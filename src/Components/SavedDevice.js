@@ -27,7 +27,7 @@ class SavedDevice extends Component {
         const { device } = this.props;
 
         return (
-            <div>
+            <div className="saved-device">
                 <p>Device Name: {device.name}</p>
                 <p>
                     Definition: 

@@ -105,7 +105,7 @@ module.exports = {
             })
             .catch(err => res.status(500).send(err));
         }
-        
+
         // Else, search by specialty or by name
         else if (specialtyQuery || nameQuery) {
             // parse applicable query strings to replace spaces with "+"

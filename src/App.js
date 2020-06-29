@@ -54,17 +54,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <DeviceSearch
-          className="QueriedDevices"
-          saveFn={this.saveDevice}
-        />
-        <SavedList
-          savedDevices={this.state.savedDevices}
-          editFn={this.editNote}
-          deleteFn={this.deleteDevices}
-        />
-        <Footer />
+        <Header className="header" />
+        <main>
+          <DeviceSearch
+            className="device-search"
+            saveFn={this.saveDevice}
+          />
+          <SavedList
+            className="saved-list"
+            savedDevices={this.state.savedDevices}
+            editFn={this.editNote}
+            deleteFn={this.deleteDevices}
+          />
+        </main>
+        <Footer className="footer" />
       </div>
     );
   }
