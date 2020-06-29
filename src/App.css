@@ -1,40 +1,14 @@
+/* --- General Styling--- */
+
+body {
+  background-color: #4A4849;
+}
+
 .App {
   display: block;
   height: 100vh;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 
-}
-
-body {
-  background-color: #4A4849;
-  /* display: flex;
-  align-content: center; */
-}
-
-.header {
-  background-color: #32373B;
-  justify-content: center;
-  height: 5vh;
-  width: 100vw;
-  padding-top: 2.5vh;
-}
-
-main {
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: top;
-  width: 95vw;
-  margin: 10px;
-}
-
-.device-search, .saved-list {
-  display: inline-flex;
-  /* flex-basis: 1; */
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 40vw;
-  margin: 50px;
 }
 
 header, footer, h1, h2 {
@@ -53,9 +27,59 @@ h2 {
   text-decoration: underline;
 }
 
+button {
+  background-color: #C83E4D;
+  border-radius: 5px;
+  border-color: #32373B;
+}
+
+input {
+  background-color: #F4D6CC;
+}
+
 /* div for sticky footer */
 .content {
-  min-height: calc(100vh - 10vh);
+  min-height: calc(100vh - 10vh); /* N.B. footer is 10vh */
+}
+
+a:link {
+  color: #F4D6CC;
+}
+
+a:visited {
+  color: #F4B860;
+}
+
+/* --- Header Component Styling --- */
+
+header {
+  background-color: #32373B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100vw;
+}
+
+/* --- Main Section Styling --- */
+
+main {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: top;
+  width: 95vw;
+  margin: 10px;
+}
+
+/* --- DeviceSearch & SavedList Components Styling --- */
+
+.device-search, .saved-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 40vw;
+  margin: 50px;
 }
 
 .queried-devices, .saved-devices {
@@ -64,6 +88,23 @@ h2 {
   flex-wrap: wrap;
   align-content: center;
 }
+
+.search-heading, .saved-heading {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.search-fields {
+  align-self: center;
+}
+
+.clear-saved {
+  width: 200px;
+  align-self: center;
+}
+
+/* --- DeviceRecord & SavedDevice Components Styling --- */
 
 .device-record, .saved-device {
   width: 30vw;
@@ -76,7 +117,22 @@ h2 {
   line-height: 1.4;
 }
 
-.footer {
+.device-field, .notes-field {
+  font-style: italic;
+  font-weight: bold;
+  color: #C83E4D;
+}
+
+.user-notes {
+  border-top: 2px;
+  border-style: dotted;
+  border-color: #C83E4D;
+  margin-top: 5px;
+}
+
+/* --- Footer Component Styling --- */
+
+footer {
   background-color: #32373B;
   display: flex;
   justify-content: center;
@@ -93,24 +149,8 @@ h2 {
   font-style: italic;
 }
 
-.disclaimer-text .disclaimer-field {
+.disclaimer-field {
   color: red;
   font-style: normal;
   font-weight: bold;
-}
-
-.device-field, .notes-field {
-  font-style: italic;
-  font-weight: bold;
-  color: #C83E4D;
-}
-
-.user-notes {
-  border-top: 2px;
-  border-style: dotted;
-  margin-top: 5px;
-}
-
-a:visited {
-  color: #F4B860;
 }

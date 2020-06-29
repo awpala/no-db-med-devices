@@ -35,7 +35,7 @@ class SavedDevice extends Component {
                         ? " " + device.definition
                         : " (No definition indicated)"}
                 </p>
-                <p className="device-description"><span className="device-field">Medical Specialty:</span> {device.specialty}</p>
+                <p><span className="device-field">Medical Specialty:</span> {device.specialty}</p>
                 <p><span className="device-field">Device Class:</span> {device.deviceClass.toUpperCase()}</p>
                 <p><span className="device-field">FDA Product Code:</span> {device.productCode}</p>
                 <p>

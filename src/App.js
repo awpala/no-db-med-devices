@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import Header from './Components/Header';
 import DeviceSearch from './Components/DeviceSearch';
 import SavedList from './Components/SavedList';
 import Footer from './Components/Footer';
-import axios from 'axios';
+
 import './App.css';
 
 class App extends Component {
@@ -55,7 +57,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="content">
-          <Header className="header" />
+          <Header />
           <main>
             <DeviceSearch
               className="device-search"
@@ -69,7 +71,7 @@ class App extends Component {
             />
           </main>
         </div>
-        <Footer className="footer" />
+        <Footer />
       </div>
     );
   }

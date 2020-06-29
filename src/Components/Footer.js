@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className="footer">
+        <footer>
             <p className="disclaimer-text">
                 <span className="disclaimer-field">Disclaimer:</span> Data 
                 provided courtesy of the United States Food and Drug
@@ -13,7 +13,7 @@ const Footer = () => {
                 and/or certified medical professional in your local regional
                 jurisdiction for further guidance in such matters.
             </p>
-        </div>
+        </footer>
     )
 }
 

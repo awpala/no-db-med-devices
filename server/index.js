@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-// openFDA devices endpoint
+// openFDA devices query endpoint
 app.get('/api/fda-devices', deviceCtrl.getDevices);
 
 // Saved devices endpoints

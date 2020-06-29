@@ -11,13 +11,15 @@ const SavedList = props => {
     ))
 
     return (
-        <div className="saved-module">
-            <h2>{`Your saved device(s)`}</h2>
-            <button onClick={() => props.deleteFn()}>Clear List</button>
+        <section className="saved-module">
+            <section className="saved-heading">
+                <h2>{`Your saved device(s) list`}</h2>
+                <button className="clear-saved" onClick={() => props.deleteFn()}>Clear List</button>
+            </section>
             {mappedList
-                ?<div className="saved-devices">{mappedList}</div>
+                ?<section className="saved-devices">{mappedList}</section>
                 : null}
-        </div>
+        </section>
     )
 }
 

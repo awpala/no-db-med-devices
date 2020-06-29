@@ -30,7 +30,7 @@ class DeviceRecord extends Component {
                         ? " " + device.definition
                         : " (No definition indicated)"}
                 </p>
-                <p className="device-description"><span className="device-field">Medical Specialty:</span> {device.medical_specialty_description}</p>
+                <p><span className="device-field">Medical Specialty:</span> {device.medical_specialty_description}</p>
                 <p><span className="device-field">Device Class:</span> {device.device_class.toUpperCase()}</p>
                 <p><span className="device-field">FDA Product Code:</span> {device.product_code}</p>
                 <p>
