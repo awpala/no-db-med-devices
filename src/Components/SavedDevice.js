@@ -28,25 +28,25 @@ class SavedDevice extends Component {
 
         return (
             <div className="saved-device">
-                <p>Device Name: {device.name}</p>
+                <p><span className="device-field">Device Name:</span> {device.name}</p>
                 <p>
-                    Definition: 
+                    <span className="device-field">Definition:</span> 
                         {device.definition.length > 1
                         ? " " + device.definition
                         : " (No definition indicated)"}
                 </p>
-                <p className="device-description">Medical Specialty: {device.specialty}</p>
-                <p>Device Class: {device.deviceClass.toUpperCase()}</p>
-                <p>FDA Product Code: {device.productCode}</p>
+                <p className="device-description"><span className="device-field">Medical Specialty:</span> {device.specialty}</p>
+                <p><span className="device-field">Device Class:</span> {device.deviceClass.toUpperCase()}</p>
+                <p><span className="device-field">FDA Product Code:</span> {device.productCode}</p>
                 <p>
-                    Regulation:
+                    <span className="device-field">Regulation:</span>
                         {device.regulationNumber.length > 1
                         ? " 21 CFR " + device.regulationNumber
                         : " (No regulation number indicated)"}
                 </p>
-                <p>Life Sustaining/Supporting? {device.isLifeSustaining}</p>
-                <p>Implantable? {device.isImplantable}</p>
-                <p>GMP Exempt? {device.isGmpExempt}</p>
+                <p><span className="device-field">Life Sustaining/Supporting?</span> {device.isLifeSustaining}</p>
+                <p><span className="device-field">Implantable?</span> {device.isImplantable}</p>
+                <p><span className="device-field">GMP Exempt?</span> {device.isGmpExempt}</p>
                 {this.state.isEditing 
                 ? (
                     <div>
@@ -60,9 +60,9 @@ class SavedDevice extends Component {
                     </div>
                 )
                 : (
-                    <div>
+                    <div className="user-notes">
                         <p>
-                            {`User Notes: ${
+                            <span className="notes-field">User Notes:</span>{` ${
                                 this.props.device.noteInput
                                 ? this.props.device.noteInput
                                 : `(No user notes indicated)`

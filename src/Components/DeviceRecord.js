@@ -23,25 +23,25 @@ class DeviceRecord extends Component {
 
         return (
             <div className='device-record' onClick={this.handleQuery}>
-                <p>Device Name: {device.device_name}</p>
+                <p><span className='device-field'>Device Name:</span> {device.device_name}</p>
                 <p>
-                    Definition: 
+                    <span className="device-field">Definition:</span> 
                         {device.definition.length > 1
                         ? " " + device.definition
                         : " (No definition indicated)"}
                 </p>
-                <p className="device-description">Medical Specialty: {device.medical_specialty_description}</p>
-                <p>Device Class: {device.device_class.toUpperCase()}</p>
-                <p>FDA Product Code: {device.product_code}</p>
+                <p className="device-description"><span className="device-field">Medical Specialty:</span> {device.medical_specialty_description}</p>
+                <p><span className="device-field">Device Class:</span> {device.device_class.toUpperCase()}</p>
+                <p><span className="device-field">FDA Product Code:</span> {device.product_code}</p>
                 <p>
-                    Regulation:
+                    <span className="device-field">Regulation:</span>
                         {device.regulation_number.length > 1
                         ? " 21 CFR " + device.regulation_number
                         : " (No regulation number indicated)"}
                 </p>
-                <p>Life Sustaining/Supporting? {device.life_sustain_support_flag}</p>
-                <p>Implantable? {device.implant_flag}</p>
-                <p>GMP Exempt? {device.gmp_exempt_flag}</p>
+                <p><span className="device-field">Life Sustaining/Supporting?</span> {device.life_sustain_support_flag}</p>
+                <p><span className="device-field">Implantable?</span> {device.implant_flag}</p>
+                <p><span className="device-field">GMP Exempt?</span> {device.gmp_exempt_flag}</p>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-// List of specialties
+// Parsed list of specialties
 // (see https://open.fda.gov/apis/device/classification/explore-the-api-with-an-interactive-chart/)
 const deviceSpecialities = [
     "Anesthesiology",
@@ -52,7 +52,7 @@ module.exports = {
         
         console.log(specialtyQuery, nameQuery);
 
-    // Generate random query string if no search terms provided
+    // A) Generate random query string if no search terms provided
         if(!specialtyQuery && !nameQuery) {
             // Generate a query array from 9 random specialities
             const randomDevices = new Array(devicesLimit);
@@ -67,7 +67,7 @@ module.exports = {
             .substring(0, randomDevices[randomDevices.length - 1].length-1);
 
             // create a query string of 9 random specialities
-            const queryString = randomDevices.reduce((acc, device) => acc + device, "");
+            const queryString = randomDevices.reduce((acc, device) => acc + device, "").toUpperCase();
 
             console.log(queryString);
         
@@ -84,7 +84,7 @@ module.exports = {
             .catch(err => res.status(500).send(err));
         } 
             
-        // Otherwise, search by specialty and by name
+    // B) Otherwise, search by specialty and by name
         else if (specialtyQuery && nameQuery) {
             // parse query strings to replace spaces with "+" using regex
             // (reference: https://stackoverflow.com/questions/3794919/replace-all-spaces-in-a-string-with)
@@ -106,7 +106,7 @@ module.exports = {
             .catch(err => res.status(500).send(err));
         }
 
-        // Else, search by specialty or by name
+    // C) Else, search by specialty or by name
         else if (specialtyQuery || nameQuery) {
             // parse applicable query strings to replace spaces with "+"
             if(specialtyQuery && !nameQuery) {

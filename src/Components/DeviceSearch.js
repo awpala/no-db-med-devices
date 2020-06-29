@@ -55,7 +55,7 @@ class DeviceSearch extends Component {
         return (
             <div className="search-module">
                 <h2>{'Search device by medical specialty and/or by name'}</h2>
-                <div>
+                <div className="search-fields">
                     <input
                         type={"text"}
                         placeholder={'Enter Medical Specialty'}
@@ -72,7 +72,7 @@ class DeviceSearch extends Component {
                         Search
                     </button>
                     <button onClick={this.clearSearch}>
-                        Clear Search
+                        Clear Search Terms
                     </button>
                 </div>
                 <h2>{`Click device record(s) to save to list`}</h2>
