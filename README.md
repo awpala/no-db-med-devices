@@ -2,7 +2,11 @@
 
 ## Overview
 
+<<<<<<< HEAD
 This simple application provides a user interface to access medical device classification data provided by the United States Food and Drug Administration (US FDA). The application provides the ability to query the FDA devices database by `medical speciality description` and/or by `device name` fields. Additionally, devices can be selected to save/retain in the user's Saved List, which also provides the ability to add user notes for reference.
+=======
+This simple application provides a user interface to access medical device classification data provided by the United States Food and Drug Administration (US FDA). The application provides the ability to query the FDA devices database by `medical speciality description` and/or `device definition` fields. Additionally, devices can be selected to save/retain in the user's Saved List, which also provides the ability to add user notes for reference.
+>>>>>>> 311815057d838fea79e66aa0eb3a5281b7a37eb2
 
 **NOTE**: This application is *not* configured with data persistence via database (i.e., *no* DB/database), therefore, the Saved List of devices will only be retained for the duration of the server port's activity.
 
